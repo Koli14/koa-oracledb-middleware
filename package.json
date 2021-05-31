@@ -1,16 +1,16 @@
 {
-  "name": "koa-oracledb",
+  "name": "koa-oracledb-middleware",
   "version": "1.0.0",
   "description": "node-oracledb middleware for Koa.",
-  "author": "Vinicius Avellar",
+  "author": "Kolos Karácsony",
   "license": "MIT",
-  "homepage": "https://github.com/viniciusam/koa-oracledb#readme",
+  "homepage": "https://github.com/Koli14/koa-oracledb-middleware#readme",
   "bugs": {
-    "url": "https://github.com/viniciusam/koa-oracledb/issues"
+    "url": "https://github.com/Koli14/koa-oracledb-middleware/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/viniciusam/koa-oracledb.git"
+    "url": "git+https://github.com/Koli14/koa-oracledb-middleware.git"
   },
   "keywords": [
     "koa",
@@ -28,7 +28,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "debug": "^2.6.8",
-    "oracledb": "^1.13.1"
+    "oracledb": "^5.1.0"
   }
 }

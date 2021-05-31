@@ -1,18 +1,20 @@
-## koa-oracledb
+## koa-oracledb-middleware
 node-oracledb middleware for Koa v2
 
-[![NPM](https://nodei.co/npm/koa-oracledb.png)](https://nodei.co/npm/koa-oracledb/)
+This is a fork of [https://github.com/viniciusam/koa-oracledb](https://github.com/viniciusam/koa-oracledb). I updated dependencies, and changed a bit.
+
+[![NPM](https://nodei.co/npm/koa-oracledb-middleware.png)](https://nodei.co/npm/koa-oracledb-middleware/)
 
 ## Install
 
-    npm install koa-oracledb --save
+    npm install koa-oracledb-middleware --save
 
 ## Usage
 
 ```
 const Koa = require('koa');
 const app = new Koa();
-const KoaOracle = require('koa-oracledb');
+const KoaOracle = require('koa-oracledb-middleware');
 
 var db = new KoaOracle({
     user:          process.env.NODE_ORACLEDB_USER,
@@ -26,7 +28,7 @@ or
 
 ```
 const Router = require('koa-router');
-const KoaOracle = require('koa-oracledb');
+const KoaOracle = require('koa-oracledb-middleware');
 
 var poolV1 = new KoaOracle({
     user:          process.env.NODE_ORACLEDB_USER,

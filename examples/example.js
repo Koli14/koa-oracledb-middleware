@@ -1,11 +1,11 @@
 const Koa = require('koa');
 const app = new Koa();
 const Router = require('koa-router');
-const KoaOracle = require('koa-oracledb');
+const KoaOracle = require('koa-oracledb-middleware');
 const oracledb = require('oracledb');
 
 // OracleDB Configs.
-oracledb.outFormat = oracledb.OBJECT;
+oracledb.outFormat = oracledb.OUT_FORMAT_OBJECT
 oracledb.maxRows = 9999;
 
 // Logging Middleware.

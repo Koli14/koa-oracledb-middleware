@@ -1,5 +1,4 @@
 const oracledb = require('oracledb');
-const debug = require('debug')('koa-oracledb');
 
 module.exports = KoaOracle;
 
@@ -9,13 +8,13 @@ module.exports = KoaOracle;
  */
 function KoaOracle(poolAttrs) {
     this.attrs = poolAttrs;
-    
+
     if (!this.attrs.poolAlias)
         this.attrs.poolAlias = 'default';
 
     oracledb.createPool(this.attrs)
-        .then(() => debug('Pool Created: %s', this.attrs.poolAlias))
-        .catch(err => debug('Error: %s', err.message));
+        .then(() => console.log('Pool Created: %s', this.attrs.poolAlias))
+        .catch(err => console.log('Error: %s', err.message));
 }
 
 /**
@@ -23,19 +22,19 @@ function KoaOracle(poolAttrs) {
  * The connection is closed after all next() calls are returned.
  */
 KoaOracle.prototype.middleware = function () {
-    var poolAlias = this.attrs.poolAlias;    
+    var poolAlias = this.attrs.poolAlias;
     return async function (ctx, next) {
         try {
             ctx.db = await oracledb.getConnection(poolAlias);
-            debug('Connection Aquired: %s', poolAlias);
+            console.log('Connection Aquired: %s', poolAlias);
             await next();
         } catch (err) {
-            debug('Error: %s', err.message);
+            console.log('Error: %s', err.message);
             throw err;
         } finally {
             if (ctx.db) {
                 ctx.db.close();
-                debug('Connection Closed');
+                console.log('Connection Closed');
             }
         }
     };
