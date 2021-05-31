@@ -1,6 +1,6 @@
 {
   "name": "koa-oracledb-middleware",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "node-oracledb middleware for Koa.",
   "author": "Kolos Karácsony",
   "license": "MIT",
